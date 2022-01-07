@@ -25,7 +25,6 @@ while true; do
 	cut -d' ' -f1)
 	if [ "$videoid" == "" ]; then exit; fi
     magnet=$(curl -s https://www.1377x.to/$videoid | grep -Po 'magnet:.*" on' | head -n 1)
-    echo "$magnet"
     webtorrent download "$magnet" --mpv
 	exit
 done
